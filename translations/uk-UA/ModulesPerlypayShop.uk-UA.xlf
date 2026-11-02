@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="modules/perlypay" source-language="en-US" target-language="uk-UA" datatype="plaintext">
+    <body>
+      <trans-unit id="6bb868d773ce039115c44184a5d46283">
+        <source>Choose another way to pay</source>
+        <target>Обрати інший спосіб оплати</target>
+        <note>views/templates/front/payment.tpl:27 views/templates/front/waiting.tpl:25</note>
+      </trans-unit>
+      <trans-unit id="b923dd94fd10b6360ad0026153e700ed">
+        <source>Crypto payment is not available right now. Please try again, or choose another way to pay.</source>
+        <target>Оплата криптовалютою зараз недоступна. Спробуйте ще раз або оберіть інший спосіб оплати.</target>
+        <note>controllers/front/payment.php:63 controllers/front/validation.php:80 src/Shop/Checkout.php:106</note>
+      </trans-unit>
+      <trans-unit id="d0c229ace555e123bafa2e8515e3065c">
+        <source>Crypto payment is not set up yet.</source>
+        <target>Оплату криптовалютою ще не налаштовано.</target>
+        <note>controllers/front/payment.php:56 controllers/front/validation.php:72</note>
+      </trans-unit>
+      <trans-unit id="18beffae8197a7b1bbb72360c1ad3006">
+        <source>Crypto payment takes orders in USD or EUR only.</source>
+        <target>Оплата криптовалютою приймає замовлення лише в USD або EUR.</target>
+        <note>src/Shop/Checkout.php:53</note>
+      </trans-unit>
+      <trans-unit id="97d855bf7838d7f2b12f15f3e22ab87f">
+        <source>Open the payment page</source>
+        <target>Відкрити сторінку оплати</target>
+        <note>views/templates/front/payment.tpl:24 views/templates/front/waiting.tpl:23</note>
+      </trans-unit>
+      <trans-unit id="3a28d6d222c411a27e5f9e6e9f132027">
+        <source>Order reference: %s</source>
+        <target>Номер замовлення: %s</target>
+        <note>views/templates/hook/payment_return.tpl:23</note>
+      </trans-unit>
+      <trans-unit id="d4761cab3207d40777cba2fc5d32fdc1">
+        <source>Pay from any wallet. The money goes straight to the shop.</source>
+        <target>Платіть з будь-якого гаманця. Гроші йдуть просто магазину.</target>
+        <note>views/templates/front/payment.tpl:21 views/templates/hook/payment_option.tpl:14</note>
+      </trans-unit>
+      <trans-unit id="7b90929367a3857067385b2762d14d06">
+        <source>Pay with crypto</source>
+        <target>Сплатити криптовалютою</target>
+        <note>views/templates/front/payment.tpl:16 views/templates/front/payment.tpl:23</note>
+      </trans-unit>
+      <trans-unit id="5bf4e6bcd81852e123bb4ac8de752cea">
+        <source>Pay with crypto: bitcoin, USDC or USDT</source>
+        <target>Сплатити криптовалютою: біткоїн, USDC або USDT</target>
+        <note>perlypay.php:127</note>
+      </trans-unit>
+      <trans-unit id="0d5ac09f8e8b31b3e30eb22abfa2b197">
+        <source>Questions about this payment? Contact the shop and give your order reference.</source>
+        <target>Є питання щодо цього платежу? Напишіть магазину й назвіть номер замовлення.</target>
+        <note>views/templates/hook/payment_return.tpl:21</note>
+      </trans-unit>
+      <trans-unit id="58b1a71c3a282d40a42830c028d34558">
+        <source>This order has nothing to pay.</source>
+        <target>У цьому замовленні нічого сплачувати.</target>
+        <note>src/Shop/Checkout.php:57</note>
+      </trans-unit>
+      <trans-unit id="e2b7dec8fa4b498156dfee6e4c84b156">
+        <source>This payment method is not available.</source>
+        <target>Цей спосіб оплати недоступний.</target>
+        <note>controllers/front/validation.php:57</note>
+      </trans-unit>
+      <trans-unit id="b33b1b9a0ab71c12727776fbe6320a47">
+        <source>Waiting for your payment</source>
+        <target>Чекаємо на ваш платіж</target>
+        <note>views/templates/front/waiting.tpl:16</note>
+      </trans-unit>
+      <trans-unit id="e068230ba498429fa6036bfddfa78f0d">
+        <source>Your crypto payment is confirmed. Thank you.</source>
+        <target>Ваш криптоплатіж підтверджено. Дякуємо.</target>
+        <note>views/templates/hook/payment_return.tpl:15</note>
+      </trans-unit>
+      <trans-unit id="308d1c2c277b3a1d5b58c46602496ecf">
+        <source>Your order at %shop%</source>
+        <target>Ваше замовлення в %shop%</target>
+        <note>src/Requests.php:68</note>
+      </trans-unit>
+      <trans-unit id="cd6e15bf4aec552e5c3bb2f7e88ff225">
+        <source>Your order is placed as soon as your payment reaches the network.</source>
+        <target>Замовлення буде оформлено, щойно ваш платіж потрапить у мережу.</target>
+        <note>views/templates/front/payment.tpl:26</note>
+      </trans-unit>
+      <trans-unit id="018b97d03c9a83af772f2da7bb9b0d09">
+        <source>Your payment arrived and the shop is checking it. You will hear from them by email.</source>
+        <target>Ваш платіж надійшов, і магазин його перевіряє. Магазин напише вам листом.</target>
+        <note>views/templates/hook/payment_return.tpl:17</note>
+      </trans-unit>
+      <trans-unit id="48e18a6b39ba77adf6cf4bdb48752f5e">
+        <source>Your payment has not reached the network yet. This page looks again every few seconds; your order is placed as soon as it arrives.</source>
+        <target>Ваш платіж ще не потрапив у мережу. Ця сторінка перевіряє знову кожні кілька секунд; замовлення буде оформлено, щойно він надійде.</target>
+        <note>views/templates/front/waiting.tpl:21</note>
+      </trans-unit>
+      <trans-unit id="0fb3493ae471d42b9b7d1f969b82e98d">
+        <source>Your payment is on its way. Your order is confirmed as soon as the network confirms it; you will get an email.</source>
+        <target>Ваш платіж уже в дорозі. Замовлення підтвердять, щойно мережа підтвердить платіж; ви отримаєте лист.</target>
+        <note>views/templates/hook/payment_return.tpl:19</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
