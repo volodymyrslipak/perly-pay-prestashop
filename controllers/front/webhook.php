@@ -34,8 +34,10 @@ if (!defined('_PS_VERSION_')) {
  *
  * Answers: 200 for every verified event (applied, a duplicate, or not
  * ours), 400 for a bad signature, 405 for anything but POST, 503 until a
- * key and secret are saved, 500 when applying failed. Perly Pay retries
- * anything but 2xx for 72 hours.
+ * key and secret are saved, 500 when applying failed or the event's
+ * invoice (or refund) could not be retrieved from Perly Pay (the secret
+ * alone is not proof of payment, so an event is never applied unchecked).
+ * Perly Pay retries anything but 2xx for 72 hours.
  *
  * @property Perlypay $module
  */

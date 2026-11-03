@@ -36,7 +36,7 @@ if (!defined('_PS_VERSION_')) {
  */
 class Perlypay extends PaymentModule
 {
-    public const VERSION = '1.0.0';
+    public const VERSION = '1.0.1';
 
     public function __construct()
     {

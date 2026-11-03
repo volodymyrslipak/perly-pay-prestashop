@@ -2,7 +2,7 @@
 <module>
     <name>perlypay</name>
     <displayName><![CDATA[Perly Pay]]></displayName>
-    <version><![CDATA[1.0.0]]></version>
+    <version><![CDATA[1.0.1]]></version>
     <description><![CDATA[Take bitcoin, USDC and USDT, paid straight to your own wallet. Perly Pay never holds the money.]]></description>
     <author><![CDATA[Perly]]></author>
     <tab><![CDATA[payments_gateways]]></tab>

@@ -53,8 +53,26 @@ final class Services
                     return $client->invoices->retrieve($invoiceId, ['max_retries' => 1]);
                 } catch (PerlyPayException $error) {
                     Log::error('invoice lookup failed', ['invoice' => $invoiceId, 'code' => $error->getErrorCode()]);
-
-                    return null;
+                    // Not found for this key is an answer (not this shop's invoice). Anything else (no connection, a 5xx,
+                    // a revoked key) is not: it is thrown so the webhook answers 500 and Perly Pay sends the event again,
+                    // since the webhook secret alone is not proof of payment and the event is never applied unchecked.
+                    if ($error->getHttpStatus() === 404) {
+                        return null;
+                    }
+                    throw $error;
+                }
+            },
+            static function (string $refundId) use ($client): ?array {
+                try {
+                    return $client->refunds->retrieve($refundId, ['max_retries' => 1]);
+                } catch (PerlyPayException $error) {
+                    Log::error('refund lookup failed', ['refund' => $refundId, 'code' => $error->getErrorCode()]);
+                    // The same rule for a refund: not found is not ours, anything else is retried, since what a message
+                    // tells the merchant to send, and where, is only ever what Perly Pay says.
+                    if ($error->getHttpStatus() === 404) {
+                        return null;
+                    }
+                    throw $error;
                 }
             }
         );

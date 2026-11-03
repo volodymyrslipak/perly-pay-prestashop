@@ -21,7 +21,7 @@ steps are in [marketplace/LISTING.md](marketplace/LISTING.md).
 
 | Setting | What to put |
 | --- | --- |
-| Secret key | Perly Pay → Developers → API keys. `sk_test_…` for test mode, `sk_live_…` for real money. Save, then press **Test connection**. |
+| Secret key | Perly Pay → Developers → API keys. `sk_test_…` for test mode, `sk_live_…` for real money. Full access, or Restricted with **Webhook endpoints** ticked: **Test connection** and **Set up webhook** read and add this shop's webhook. Save, then press **Test connection**. |
 | Webhook | Press **Set up webhook**: it adds this shop's address (`https://your-shop/module/perlypay/webhook`, shown on the page) in Perly Pay with the invoice and refund events and saves its `whsec_…` secret. Or add it there yourself and paste the secret. |
 | Payment page | **Redirect** (the default) sends the buyer to the payment page on pay.perly.io; **Overlay** opens it over a page of the shop (add your shop's address in Perly Pay → Settings → "Sites that may embed the checkout"). Phones always get the page itself. |
 | Open refunds in Perly Pay | On by default: a credit slip on an order Perly Pay paid opens a refund there. |
@@ -61,6 +61,12 @@ any payment module.
   private messages on the order. An invoice that expires with part paid holds
   the order; one that expires unpaid leaves the cart as it was (no order); an
   order whose seen payment never arrived becomes **Payment error**.
+- A signed webhook is not taken as proof of payment: it only names the
+  invoice, which the module asks Perly Pay's API for with the shop's own key,
+  and that answer decides the cart, mode, status, total and currency. An event
+  the answer does not bear out (an `invoice.fulfilled` for an invoice still
+  open) is acknowledged and ignored; when Perly Pay cannot be asked, the
+  webhook answers 500 and Perly Pay sends it again.
 - Each event is applied once (its id is kept), under a named database lock
   per cart, and only to a cart whose invoices include it, in the same mode,
   made by this module. A replayed webhook changes nothing.
@@ -109,6 +115,13 @@ Perly Pay sends webhooks only to `https://` addresses.
 - The webhook controller acts only on a valid `Perly-Signature` (HMAC-SHA256
   of the timestamp and the raw body, at most five minutes old, compared in
   constant time by the SDK), and only on invoices this shop made for that cart.
+  Even then the event only names the invoice: what the order becomes is decided
+  by the invoice as Perly Pay's API returns it to the shop's key, so a leaked
+  webhook secret cannot make an unpaid order paid. Refund details are also
+  confirmed with Perly Pay's API, never taken from the webhook: a refund event
+  only names its refund, and the order message says to send what that refund
+  holds, to its address, so a leaked secret cannot point a refund at someone
+  else's wallet.
 - The order is made for the amount Perly Pay billed, never the cart's total,
   and only for the cart the invoice names (`validateOrder` with the cart's
   secure key).
@@ -135,3 +148,8 @@ Perly Pay sends webhooks only to `https://` addresses.
 MIT (`src/perlypay/LICENSE`), which PrestaShop Addons lists among the
 licences compatible with its AFL/OSL. Perly Pay's PHP SDK inside
 (`vendor/perly-pay-sdk`) is MIT too.
+
+## Changelog
+
+- **1.0.1**: Every payment is confirmed with Perly Pay's API before an order is completed: a signed webhook alone no longer marks an order paid, so a leaked signing secret cannot ship an unpaid order. Refund details are also confirmed with Perly Pay's API, never taken from the webhook, so a leaked signing secret cannot point a refund at someone else's wallet.
+- **1.0.0**: First release.

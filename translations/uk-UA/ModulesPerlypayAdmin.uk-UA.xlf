@@ -10,12 +10,12 @@
       <trans-unit id="a04eb29e4c0dbf57be212a0e270c4a31">
         <source>%invoice% closed with %received% of %due% paid. Settle it in Perly Pay: refund it, or accept it there and mark this order paid.</source>
         <target>%invoice% закрито, сплачено %received% із %due%. Владнайте це в Perly Pay: поверніть платіж або прийміть його там і позначте замовлення сплаченим.</target>
-        <note>src/Sync/EventProcessor.php:480</note>
+        <note>src/Sync/EventProcessor.php:585</note>
       </trans-unit>
       <trans-unit id="ae1eaaeffc8e7e7943cec4ba1675f188">
         <source>%invoice% was paid for %billed%, but this order is %total%. Settle it in Perly Pay: refund it, or take the rest and mark this order paid.</source>
         <target>%invoice% сплачено на %billed%, але це замовлення на %total%. Владнайте це в Perly Pay: поверніть платіж або отримайте решту й позначте замовлення сплаченим.</target>
-        <note>src/Sync/EventProcessor.php:445</note>
+        <note>src/Sync/EventProcessor.php:550</note>
       </trans-unit>
       <trans-unit id="696d2ef88f2cd3b7da191a6bbd92c243">
         <source>A credit slip on an order paid with Perly Pay opens a refund there. The customer gets an email to give an address; you send the coins from your own wallet.</source>
@@ -25,7 +25,7 @@
       <trans-unit id="4878299c46ca358584a4e56f7acbb1e0">
         <source>An earlier invoice for this cart closed unpaid: %invoice%.</source>
         <target>Попередній рахунок за цей кошик закрито без оплати: %invoice%.</target>
-        <note>src/Sync/EventProcessor.php:342</note>
+        <note>src/Sync/EventProcessor.php:442</note>
       </trans-unit>
       <trans-unit id="5fcd300dfdffe371c55aa945f4509c19">
         <source>Awaiting crypto confirmation</source>
@@ -65,7 +65,7 @@
       <trans-unit id="543bd50f13c0f366d8adbcc2fdaf61d7">
         <source>Held for review in Perly Pay (%invoice%): %reason%. Decide there; ship only once the payment is accepted.</source>
         <target>Затримано на перевірку в Perly Pay (%invoice%): %reason%. Вирішіть там; відвантажуйте лише після того, як платіж буде прийнято.</target>
-        <note>src/Sync/EventProcessor.php:474</note>
+        <note>src/Sync/EventProcessor.php:579</note>
       </trans-unit>
       <trans-unit id="d78b0e8fd9f7fcd3f6cca9b120c13cf8">
         <source>Ids and outcomes to Advanced Parameters → Logs. Never keys, secrets or customers&apos; details.</source>
@@ -155,27 +155,27 @@
       <trans-unit id="564b2b093c8aa4e1b662676b051368f9">
         <source>Overpaid: %received% received for %due%. Refund the difference in Perly Pay if you need to.</source>
         <target>Переплата: отримано %received% замість %due%. За потреби поверніть різницю в Perly Pay.</target>
-        <note>src/Sync/EventProcessor.php:520</note>
+        <note>src/Sync/EventProcessor.php:625</note>
       </trans-unit>
       <trans-unit id="43ad388c118c8e797e822c290a0c1d44">
         <source>Paid late: the money arrived after the invoice had expired.</source>
         <target>Сплачено із запізненням: гроші надійшли після того, як рахунок прострочився.</target>
-        <note>src/Sync/EventProcessor.php:517</note>
+        <note>src/Sync/EventProcessor.php:622</note>
       </trans-unit>
       <trans-unit id="88f97e84f8c84159ed617afcfd73bfb1">
         <source>Paid with Perly Pay (%invoice%).</source>
         <target>Сплачено через Perly Pay (%invoice%).</target>
-        <note>src/Sync/EventProcessor.php:512</note>
+        <note>src/Sync/EventProcessor.php:617</note>
       </trans-unit>
       <trans-unit id="7e00c89906c2043eacd0e432ba432b4e">
         <source>Part paid: %received% of %due% received for %invoice%. The customer can still send the rest.</source>
         <target>Сплачено частково: %received% із %due% за %invoice%. Покупець ще може надіслати решту.</target>
-        <note>src/Sync/EventProcessor.php:466</note>
+        <note>src/Sync/EventProcessor.php:571</note>
       </trans-unit>
       <trans-unit id="44dc92c6cd0264fbba45aafeaaeb5cba">
         <source>Partly refunded in Perly Pay (%invoice%).</source>
         <target>Частково повернено в Perly Pay (%invoice%).</target>
-        <note>src/Sync/EventProcessor.php:372</note>
+        <note>src/Sync/EventProcessor.php:472</note>
       </trans-unit>
       <trans-unit id="d35acbb07d2841712a937d5748e9bdc2">
         <source>Payment page</source>
@@ -185,12 +185,12 @@
       <trans-unit id="600f1431663b5ac6c4686875acfa43fc">
         <source>Payment received for %invoice%. Perly Pay is checking the sender; the payment is accepted when that is done.</source>
         <target>Платіж за %invoice% отримано. Perly Pay перевіряє відправника; платіж буде прийнято після перевірки.</target>
-        <note>src/Sync/EventProcessor.php:454</note>
+        <note>src/Sync/EventProcessor.php:559</note>
       </trans-unit>
       <trans-unit id="15fcd16397f2f2f69b7a38e4dd3cb8b4">
         <source>Payment seen on %network% for %invoice%. Waiting for confirmations.</source>
         <target>Платіж у мережі %network% за %invoice% помічено. Чекаємо на підтвердження.</target>
-        <note>src/Sync/EventProcessor.php:460</note>
+        <note>src/Sync/EventProcessor.php:565</note>
       </trans-unit>
       <trans-unit id="c07841f1914671172b8906edd18c244c">
         <source>Perly Pay</source>
@@ -210,12 +210,12 @@
       <trans-unit id="c4b530ffb4eeeec16788f6a675c02e5d">
         <source>Perly Pay invoice %invoice% for this cart was paid, but the order was placed with another payment method. Refund it in Perly Pay.</source>
         <target>Рахунок Perly Pay %invoice% за цей кошик сплачено, але замовлення оформлено іншим способом оплати. Поверніть його в Perly Pay.</target>
-        <note>src/Sync/EventProcessor.php:205</note>
+        <note>src/Sync/EventProcessor.php:305</note>
       </trans-unit>
       <trans-unit id="b59be33a2971287231fd53312a95c423">
         <source>Perly Pay invoice %invoice% was paid too, for an order already paid by %paid%. Refund one of them in Perly Pay.</source>
         <target>Рахунок Perly Pay %invoice% також сплачено, хоча замовлення вже сплачено рахунком %paid%. Поверніть один із них у Perly Pay.</target>
-        <note>src/Sync/EventProcessor.php:284</note>
+        <note>src/Sync/EventProcessor.php:384</note>
       </trans-unit>
       <trans-unit id="489b10535a5b0d2b1bca1150ee15483a">
         <source>Perly Pay needs PHP 8.1 or later with the curl extension.</source>
@@ -255,12 +255,12 @@
       <trans-unit id="0db7beb3859e7974376845dd417779d7">
         <source>Received %amount% %asset% on %network%.</source>
         <target>Отримано %amount% %asset% у мережі %network%.</target>
-        <note>src/Sync/EventProcessor.php:505</note>
+        <note>src/Sync/EventProcessor.php:610</note>
       </trans-unit>
       <trans-unit id="54de107a6de367e062d1a8739c11c9f9">
         <source>Received %amount% %asset% on %network%: %tx%</source>
         <target>Отримано %amount% %asset% у мережі %network%: %tx%</target>
-        <note>src/Sync/EventProcessor.php:495</note>
+        <note>src/Sync/EventProcessor.php:600</note>
       </trans-unit>
       <trans-unit id="9fe6dfa299f7ae88d02b36c118b15e1e">
         <source>Redirect: the payment page on pay.perly.io</source>
@@ -270,12 +270,12 @@
       <trans-unit id="92f54070c99d538cd4570ddda98a343a">
         <source>Refund %refund% confirmed: %amount% %asset% on %network%. %tx%</source>
         <target>Повернення %refund% підтверджено: %amount% %asset% у мережі %network%. %tx%</target>
-        <note>src/Sync/EventProcessor.php:422</note>
+        <note>src/Sync/EventProcessor.php:527</note>
       </trans-unit>
       <trans-unit id="d03cafb1b7b0652986a451576887eb67">
         <source>Refund %refund% is ready. Send %amount% %asset% on %network% to %address% from your wallet, then paste the transaction id in Perly Pay.</source>
         <target>Повернення %refund% готове. Надішліть %amount% %asset% у мережі %network% на %address% зі свого гаманця, а потім вставте ідентифікатор транзакції в Perly Pay.</target>
-        <note>src/Sync/EventProcessor.php:411</note>
+        <note>src/Sync/EventProcessor.php:516</note>
       </trans-unit>
       <trans-unit id="a583e7ba34a49cbf4958e234f3e66a4d">
         <source>Refund %refund% opened in Perly Pay for %amount%. The customer gets an email to give an address; once it is checked, send the amount from your wallet and paste the transaction id in Perly Pay.</source>
@@ -285,37 +285,37 @@
       <trans-unit id="73fafd92d20182e361a1f72eb22e54bb">
         <source>Refund %refund% opened in Perly Pay. The customer gets an email to give an address.</source>
         <target>Повернення %refund% відкрито в Perly Pay. Покупець отримує лист, щоб дати адресу.</target>
-        <note>src/Sync/EventProcessor.php:399</note>
+        <note>src/Sync/EventProcessor.php:499</note>
       </trans-unit>
       <trans-unit id="e03ec2692e51effe15e9e28b5559a739">
         <source>Refund %refund% sent: %tx%. Waiting for the network.</source>
         <target>Повернення %refund% надіслано: %tx%. Чекаємо на мережу.</target>
-        <note>src/Sync/EventProcessor.php:416</note>
+        <note>src/Sync/EventProcessor.php:521</note>
       </trans-unit>
       <trans-unit id="cc70bb7ca7dad4ee4f5ae8e79ba21277">
         <source>Refund %refund% was canceled.</source>
         <target>Повернення %refund% скасовано.</target>
-        <note>src/Sync/EventProcessor.php:427</note>
+        <note>src/Sync/EventProcessor.php:532</note>
       </trans-unit>
       <trans-unit id="3cc5f53499cacdf6520bb358743f6bb1">
         <source>Refund %refund%: the customer gave an address. Perly Pay is checking it.</source>
         <target>Повернення %refund%: покупець дав адресу. Perly Pay її перевіряє.</target>
-        <note>src/Sync/EventProcessor.php:407</note>
+        <note>src/Sync/EventProcessor.php:512</note>
       </trans-unit>
       <trans-unit id="06062847bac8a2d2a9c957ce5f658900">
         <source>Refund confirmed in Perly Pay (%invoice%).</source>
         <target>Повернення підтверджено в Perly Pay (%invoice%).</target>
-        <note>src/Sync/EventProcessor.php:368</note>
+        <note>src/Sync/EventProcessor.php:468</note>
       </trans-unit>
       <trans-unit id="1332d2912b132513f233fecde190f1ea">
         <source>Refunded in full in Perly Pay (%invoice%).</source>
         <target>Повністю повернено в Perly Pay (%invoice%).</target>
-        <note>src/Sync/EventProcessor.php:364</note>
+        <note>src/Sync/EventProcessor.php:464</note>
       </trans-unit>
       <trans-unit id="53be80c744bf26c2f599c0ab1c11eb82">
         <source>Refunded in full in Perly Pay (%invoice%). That invoice did not pay this order, so its state is unchanged.</source>
         <target>Повністю повернено в Perly Pay (%invoice%). Цей рахунок не оплачував замовлення, тож його стан не змінено.</target>
-        <note>src/Sync/EventProcessor.php:359</note>
+        <note>src/Sync/EventProcessor.php:459</note>
       </trans-unit>
       <trans-unit id="d1024639370f4022b6aed29d20459261">
         <source>Remove Perly Pay? Its settings go; orders keep their payments and messages.</source>
@@ -370,7 +370,7 @@
       <trans-unit id="bd478dcfb8fff87b7c7d39679eeb594f">
         <source>Test mode: no real money moved.</source>
         <target>Тестовий режим: справжні гроші не рухалися.</target>
-        <note>src/Sync/EventProcessor.php:514</note>
+        <note>src/Sync/EventProcessor.php:619</note>
       </trans-unit>
       <trans-unit id="8efe578937328550032fdcaa5a20ca93">
         <source>Test mode: test networks only, key %s.</source>
@@ -390,12 +390,12 @@
       <trans-unit id="29282bb693e6d7ab13da340bfb02bf52">
         <source>The Perly Pay invoice %invoice% expired: the payment seen for it never arrived.</source>
         <target>Рахунок Perly Pay %invoice% прострочено: помічений платіж так і не надійшов.</target>
-        <note>src/Sync/EventProcessor.php:349</note>
+        <note>src/Sync/EventProcessor.php:449</note>
       </trans-unit>
       <trans-unit id="31baa50d2e8a34782e3f99de87bb3c05">
         <source>The Perly Pay invoice %invoice% was canceled.</source>
         <target>Рахунок Perly Pay %invoice% скасовано.</target>
-        <note>src/Sync/EventProcessor.php:350</note>
+        <note>src/Sync/EventProcessor.php:450</note>
       </trans-unit>
       <trans-unit id="acda54c21e7f95b8a5f8444b83f1e688">
         <source>The webhook is in Perly Pay, but its secret is not saved here. Paste it, or press &quot;Set up webhook&quot; for a new one.</source>
@@ -455,7 +455,7 @@
       <trans-unit id="59f20abd9a4b19d4d96f89d43af27a10">
         <source>the network</source>
         <target>мережа</target>
-        <note>src/Sync/EventProcessor.php:542</note>
+        <note>src/Sync/EventProcessor.php:647</note>
       </trans-unit>
     </body>
   </file>
